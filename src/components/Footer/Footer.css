@@ -1,4 +1,5 @@
 .footer {
+  font-family: "Taviraj", serif;
   margin-top: 1rem;
   padding: 1rem;
   background: #0f1228;
@@ -16,4 +17,13 @@
 .footer-link {
   color: #e7e9fe;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 420px) {
+  .footer {
+    padding: 0;
+  }
+  .footer p {
+    margin: 8px auto;
+  }
 }

@@ -1,4 +1,5 @@
 .navbar {
+  font-family: "Taviraj", serif;
   margin-bottom: 2rem;
   padding: 0;
   background: #0f1228;
@@ -46,5 +47,11 @@
     display: none;
     margin-left: 0;
     margin: auto;
+  }
+  .navbar ul {
+    margin: auto;
+  }
+  .list-item-icon {
+    font-size: 1.4rem;
   }
 }
