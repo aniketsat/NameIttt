@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Header from "./components/Header/Header";
+import ResultsContainer from "./components/ResultsContainer/ResultsContainer";
+import SearchBox from "./components/SearchBox/SearchBox";
+import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
+
+const name = require("@rstacruz/startup-name-generator");
 
 function App() {
+  const [isHeaderExpanded, setIsHeaderExpanded] = useState(true);
+  const [suggestedNames, setSuggestedNames] = useState([]);
+
+  const inputChangeHandler = (inputData) => {
+    setIsHeaderExpanded(!inputData);
+    setSuggestedNames(inputData ? name(inputData) : []);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Header headerExpanded={isHeaderExpanded} />
+      <SearchBox onInputChange={inputChangeHandler} />
+      <ResultsContainer suggestedNames={suggestedNames} />
+      <Footer />
     </div>
   );
 }

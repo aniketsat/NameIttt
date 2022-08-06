@@ -1,0 +1,19 @@
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #0f1228;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-link {
+  color: #e7e9fe;
+  text-decoration: none;
+}
